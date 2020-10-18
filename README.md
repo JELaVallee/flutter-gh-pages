@@ -29,7 +29,16 @@ To make the build using canvas kit, use the `useCanvasKit` property
 
 ```yml
       ...
-      - uses: erickzanardo/flutter-gh-pages@v1
+      - uses: erickzanardo/flutter-gh-pages@v1.1
         with:
           useCanvasKit: true
+```
+
+To make the build use a different PWA caching strategy ('offline-first' or 'none'), use the `pwdCachingStrategy` property
+
+```yml
+      ...
+      - uses: erickzanardo/flutter-gh-pages@v1.1
+        with:
+          pwaCachingStrategy: 'none'
 ```
