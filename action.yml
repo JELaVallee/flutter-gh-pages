@@ -14,7 +14,7 @@ inputs:
   pwaCachingStrategy:
     description: 'If the PWA service worker caching strategy should be offline-first or none (default offline-first)'
     required: false
-    default: 'none'
+    default: none
 
 runs: 
   using: 'composite'
