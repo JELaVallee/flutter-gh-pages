@@ -11,6 +11,10 @@ inputs:
     description: 'If the build should use skia (canvas kit) or not (default false)'
     required: false
     default: false
+  pwaCacheStrategy:
+    description: 'If the PWA service worker caching strategy should be offline-first or none (default offline-first)'
+    required: false
+    default: 'none'
 
 runs: 
   using: 'composite'
@@ -19,7 +23,7 @@ runs:
       shell: bash
     - run: flutter pub get
       shell: bash
-    - run: flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA=${{inputs.useCanvasKit}}
+    - run: flutter build web --release --dart-define=FLUTTER_WEB_USE_SKIA=${{inputs.useCanvasKit}} --pwa-strategy=${{inputs.pwaCacheStrategy}}
       shell: bash
     - run: git config user.name github-actions
       shell: bash
